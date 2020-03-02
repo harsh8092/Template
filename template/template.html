@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Account Details" icon-name="action:add_contact">
+        <div class="c-container">
+        <!--- Lightning layout for the Account details-->
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 1">Account Name</p>
+                    <!--Using Dynamic list for accounts section-->
+                        <template for:each={accounts} for:item="account"> 
+                            <li  key={accounts.id}>    
+                                {account.Name}
+                            </li>
+                            </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 2">Account Industry</p>
+                        <template for:each={accounts} for:item="account"> 
+                            <li  key={accounts.id}>    
+                                {account.Industry}
+                            </li>
+                            </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 3">Account Sector</p>
+                        <template for:each={accounts} for:item="account"> 
+                            <li  key={accounts.id}>    
+                                {account.Sector}
+                            </li>
+                            </template>
+                    </div>
+                    </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <p class="field-title" title="Field 4">Account Phone</p>
+                        <template for:each={accounts} for:item="account"> 
+                            <li  key={accounts.id}>    
+                                {account.Phone}
+                            </li>
+                            </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    
+            <div onkeypress={handleKeyPress}>
+            <lightning-input label="Account Name" type="text" onchange={handleChange} value={accountName}></lightning-input>
+            <lightning-input label="Account Industry" type="text" onchange={handleChange} value={accountIndustry}></lightning-input>
+            <lightning-input label="Account Sector" type="text" onchange={handleChange} value={accountSector}></lightning-input>
+            <lightning-input label="Account Phone" type="text" onchange={handleChange} value={accountPhone}></lightning-input>
+            </div>
+        </lightning-card>
+        </template>
+        
+    
